@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Shield_GregAlger.ma
-//Last modified: Thu, Aug 10, 2017 09:46:30 PM
+//Last modified: Thu, Aug 10, 2017 09:48:12 PM
 //Codeset: UTF-8
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,8 +13,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "6A590712-D24C-9318-6DD5-C98947CF8ADA";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.1884575721323927 10.805255998685602 37.817333134499236 ;
-	setAttr ".r" -type "double3" -15.938352729600439 1.7999999999945204 4.972070106241512e-17 ;
+	setAttr ".t" -type "double3" 7.6148974667546021 8.0051975973825122 37.765683126369503 ;
+	setAttr ".r" -type "double3" -11.73835272960453 11.399999999992541 0 ;
 	setAttr ".rp" -type "double3" 4.0552113833438343e-16 -4.6768028498983364e-16 7.1054273576010019e-15 ;
 	setAttr ".rpt" -type "double3" 3.2158149168454521e-15 2.5573285996251096e-15 -1.6870282299007846e-15 ;
 createNode camera -s -n "perspShape" -p "persp";

@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Plane_GregAlger.ma
-//Last modified: Sat, Aug 12, 2017 12:18:55 PM
+//Last modified: Sat, Aug 12, 2017 12:33:51 PM
 //Codeset: UTF-8
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,7 +13,7 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "CA12C3BA-A340-6183-2A8C-30B8B2BF494E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 82.916087931378996 24.196002360821545 -5.9347970422381291 ;
+	setAttr ".t" -type "double3" 31.798312840788945 10.112473492675173 -1.1027446282806683 ;
 	setAttr ".r" -type "double3" -15.338352729597728 -264.60000000007369 2.5444437451708134e-14 ;
 	setAttr ".rp" -type "double3" 0 -8.8817841970012523e-16 7.1054273576010019e-15 ;
 	setAttr ".rpt" -type "double3" 9.2201371105484474e-15 1.531176248110421e-15 -6.3241070958385377e-15 ;
@@ -21,7 +21,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "93E7D43D-DB4E-2D7B-D681-D6B305E9A3E7";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 87.787630836739154;
+	setAttr ".coi" 34.545528641922743;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";

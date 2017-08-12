@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: CharacterInClass_GregAlger.ma
-//Last modified: Sat, Aug 12, 2017 10:52:15 AM
+//Last modified: Sat, Aug 12, 2017 01:55:25 PM
 //Codeset: UTF-8
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "243B9E29-C84E-4DC2-AE70-87948EE281EF";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.24060610366952373 7.7196063539595254 -9.8449789777144971 ;
-	setAttr ".r" -type "double3" -16.538352729579536 181.39999999997772 0 ;
+	setAttr ".t" -type "double3" -0.65271159165523907 4.9596137056640828 -14.479625460506375 ;
+	setAttr ".r" -type "double3" -3.338352729615726 -532.60000000016532 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "DC76DE7D-0241-A9C3-AA2D-40940AAA8731";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 10.272915295284932;
+	setAttr ".coi" 14.018693344128105;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -78,8 +78,8 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "Pelvis";
 	rename -uid "CD29EB78-EA41-D556-5293-4696FCC8AA2E";
-	setAttr ".rp" -type "double3" 0 5.1601865206790842 0 ;
-	setAttr ".sp" -type "double3" 0 5.1601865206790842 0 ;
+	setAttr ".rp" -type "double3" -0.55370806597678845 4.1051250501218339 -0.25133201479911804 ;
+	setAttr ".sp" -type "double3" -0.55370806597678845 4.1051250501218339 -0.25133201479911804 ;
 createNode mesh -n "PelvisShape" -p "Pelvis";
 	rename -uid "768FBF0D-9E42-0A3E-8BFE-9C9AF06DFE2B";
 	setAttr -k off ".v";
@@ -93,8 +93,8 @@ createNode mesh -n "PelvisShape" -p "Pelvis";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "MiddleBack" -p "Pelvis";
 	rename -uid "1009C8DD-2D46-20F0-8CD9-498C5567FD1C";
-	setAttr ".rp" -type "double3" 0 5.7915087948644857 0 ;
-	setAttr ".sp" -type "double3" 0 5.7915087948644857 0 ;
+	setAttr ".rp" -type "double3" 0 5.2588614699542706 0 ;
+	setAttr ".sp" -type "double3" 0 5.2588614699542706 0 ;
 createNode mesh -n "MiddleBackShape" -p "MiddleBack";
 	rename -uid "777AD09B-D14B-71EB-B998-B9857454253F";
 	setAttr -k off ".v";
@@ -108,13 +108,14 @@ createNode mesh -n "MiddleBackShape" -p "MiddleBack";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "UpperBack" -p "MiddleBack";
 	rename -uid "DBA6F730-2043-E79B-A566-D294894FA3ED";
-	setAttr ".rp" -type "double3" 0 6.8193908320293684 0 ;
-	setAttr ".sp" -type "double3" 0 6.8193908320293684 0 ;
+	setAttr ".rp" -type "double3" 0.028280379337517259 6.1102543364616482 0 ;
+	setAttr ".sp" -type "double3" 0.028280379337517259 6.1102543364616482 0 ;
 createNode mesh -n "UpperBackShape" -p "UpperBack";
 	rename -uid "E510AD8E-1E4C-DC5B-7687-3FA210921C14";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -123,8 +124,8 @@ createNode mesh -n "UpperBackShape" -p "UpperBack";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Head" -p "UpperBack";
 	rename -uid "483E3E05-6F40-F472-D50E-2786CB2B8877";
-	setAttr ".rp" -type "double3" 0 7.2209112154968205 0 ;
-	setAttr ".sp" -type "double3" 0 7.2209112154968205 0 ;
+	setAttr ".rp" -type "double3" 0.028280379337517259 7.234458378420614 0 ;
+	setAttr ".sp" -type "double3" 0.028280379337517259 7.234458378420614 0 ;
 createNode mesh -n "HeadShape" -p "Head";
 	rename -uid "C0DBF32A-D946-29EE-FA16-13893D44EC37";
 	setAttr -k off ".v";
@@ -138,14 +139,14 @@ createNode mesh -n "HeadShape" -p "Head";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "l_UpperArm" -p "UpperBack";
 	rename -uid "6E2A301D-6B4D-BAAD-B634-0994C9F8EF10";
-	setAttr ".rp" -type "double3" -1.4233076395461739 6.8677098833696331 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" -1.4233076395461739 6.8677098833696331 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" -1.2706228503604242 6.8677098833696331 0.059325416179935475 ;
+	setAttr ".sp" -type "double3" -1.2706228503604242 6.8677098833696331 0.059325416179935475 ;
 createNode mesh -n "l_UpperArmShape" -p "l_UpperArm";
 	rename -uid "86953139-4940-4EBF-105B-12A0898E3338";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.875 ;
+	setAttr ".pv" -type "double2" 0.25 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -154,8 +155,8 @@ createNode mesh -n "l_UpperArmShape" -p "l_UpperArm";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "l_LowerArm" -p "l_UpperArm";
 	rename -uid "C131138E-CA47-57AA-DCAF-AE8A40A96C29";
-	setAttr ".rp" -type "double3" -1.4233076395461739 5.2812110923996203 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" -1.4233076395461739 5.2812110923996203 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" -1.4915471747917464 5.6463493019030375 0.059325416179935475 ;
+	setAttr ".sp" -type "double3" -1.4915471747917464 5.6463493019030375 0.059325416179935475 ;
 createNode mesh -n "l_LowerArmShape" -p "l_LowerArm";
 	rename -uid "61D64C5A-6D49-FF31-FCE7-2AAA079A929D";
 	setAttr -k off ".v";
@@ -170,10 +171,10 @@ createNode mesh -n "l_LowerArmShape" -p "l_LowerArm";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  -1.233965 4.6539588 -0.13001721 
-		-1.6126503 4.6539588 -0.13001721 -1.233965 5.0918684 -0.13001721 -1.6126503 5.0918684 
-		-0.13001721 -1.233965 5.0918684 0.24866803 -1.6126503 5.0918684 0.24866803 -1.233965 
-		4.6539588 0.24866803 -1.6126503 4.6539588 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  -1.3022046 4.7968388 -0.13001721 
+		-1.6808898 4.7968388 -0.13001721 -1.3022046 5.2347484 -0.13001721 -1.6808898 5.2347484 
+		-0.13001721 -1.3022046 5.2347484 0.24866803 -1.6808898 5.2347484 0.24866803 -1.3022046 
+		4.7968388 0.24866803 -1.6808898 4.7968388 0.24866803;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -198,8 +199,8 @@ createNode mesh -n "l_LowerArmShape" -p "l_LowerArm";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "l_Hand" -p "l_LowerArm";
 	rename -uid "02DF0B84-1543-ADA6-6C17-6DAC49BDBDF9";
-	setAttr ".rp" -type "double3" -1.4233076395461735 3.8022237707474664 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" -1.4233076395461735 3.8022237707474664 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" -1.4362735795036978 4.2460474677683582 0.059325416179935475 ;
+	setAttr ".sp" -type "double3" -1.4362735795036978 4.2460474677683582 0.059325416179935475 ;
 createNode mesh -n "l_HandShape" -p "l_Hand";
 	rename -uid "B3DD26BB-CC46-641E-7C10-87910A7AEC55";
 	setAttr -k off ".v";
@@ -214,10 +215,10 @@ createNode mesh -n "l_HandShape" -p "l_Hand";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  -1.233965 3.7931995 -0.13001721 
-		-1.6126503 3.7931995 -0.13001721 -1.233965 3.4425049 -0.13001721 -1.6126503 3.4425049 
-		-0.13001721 -1.233965 3.4425049 0.24866803 -1.6126503 3.4425049 0.24866803 -1.233965 
-		3.7931995 0.24866803 -1.6126503 3.7931995 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  -1.2602491 4.2969618 -0.2154434 
+		-1.7228453 4.2969618 -0.2154434 -1.2602491 3.7896276 -0.2154434 -1.7228453 3.7896276 
+		-0.2154434 -1.2602491 3.7896276 0.33409423 -1.7228453 3.7896276 0.33409423 -1.2602491 
+		4.2969618 0.33409423 -1.7228453 4.2969618 0.33409423;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -242,8 +243,8 @@ createNode mesh -n "l_HandShape" -p "l_Hand";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "r_UpperArm1" -p "UpperBack";
 	rename -uid "B68E231E-F64B-7F56-67FF-029204DD131E";
-	setAttr ".rp" -type "double3" 1.4326325964820652 6.8677098833696331 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" 1.4326325964820652 6.8677098833696331 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" 1.3543451363272683 6.8677098833696331 0.059325416179935475 ;
+	setAttr ".sp" -type "double3" 1.3543451363272683 6.8677098833696331 0.059325416179935475 ;
 createNode mesh -n "r_UpperArm1Shape" -p "r_UpperArm1";
 	rename -uid "F3D25EB3-DD45-DCC6-E158-60806EECE073";
 	setAttr -k off ".v";
@@ -258,10 +259,10 @@ createNode mesh -n "r_UpperArm1Shape" -p "r_UpperArm1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  1.6219752 6.2404575 -0.13001721 
-		1.2432899 6.2404575 -0.13001721 1.6219752 6.6783676 -0.13001721 1.2432899 6.6783676 
-		-0.13001721 1.6219752 6.6783676 0.24866803 1.2432899 6.6783676 0.24866803 1.6219752 
-		6.2404575 0.24866803 1.2432899 6.2404575 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  1.7473903 6.2404575 -0.13001721 
+		1.368705 6.2404575 -0.13001721 1.7473903 6.6783676 -0.13001721 1.368705 6.6783676 
+		-0.13001721 1.7473903 6.6783676 0.24866803 1.368705 6.6783676 0.24866803 1.7473903 
+		6.2404575 0.24866803 1.368705 6.2404575 0.24866803;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -286,8 +287,8 @@ createNode mesh -n "r_UpperArm1Shape" -p "r_UpperArm1";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "r_LowerArm" -p "r_UpperArm1";
 	rename -uid "BDF7E1C7-D54C-C43B-1D43-04B1CF533B21";
-	setAttr ".rp" -type "double3" 1.4326325964820652 5.2812110923996203 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" 1.4326325964820652 5.2812110923996203 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" 1.5580476292025056 4.2983751551450649 -0.25133198499679565 ;
+	setAttr ".sp" -type "double3" 1.5580476292025056 4.2983751551450649 -0.25133198499679565 ;
 createNode mesh -n "r_LowerArmShape" -p "r_LowerArm";
 	rename -uid "FC197985-0A45-C913-C5AB-799A02BA1895";
 	setAttr -k off ".v";
@@ -302,10 +303,10 @@ createNode mesh -n "r_LowerArmShape" -p "r_LowerArm";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  1.6219752 4.6539588 -0.13001721 
-		1.2432899 4.6539588 -0.13001721 1.6219752 5.0918684 -0.13001721 1.2432899 5.0918684 
-		-0.13001721 1.6219752 5.0918684 0.24866803 1.2432899 5.0918684 0.24866803 1.6219752 
-		4.6539588 0.24866803 1.2432899 4.6539588 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  1.7473903 4.7983751 -0.13001721 
+		1.368705 4.7983751 -0.13001721 1.7473903 5.2362847 -0.13001721 1.368705 5.2362847 
+		-0.13001721 1.7473903 5.2362847 0.24866803 1.368705 5.2362847 0.24866803 1.7473903 
+		4.7983751 0.24866803 1.368705 4.7983751 0.24866803;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -330,8 +331,8 @@ createNode mesh -n "r_LowerArmShape" -p "r_LowerArm";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "r_Hand" -p "r_LowerArm";
 	rename -uid "DCD96B3B-C742-3CF9-71BF-CD945191722B";
-	setAttr ".rp" -type "double3" 1.4326325964820656 3.8022237707474664 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" 1.4326325964820656 3.8022237707474664 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" 1.567521237466037 4.2033836574152126 0.059325416179935475 ;
+	setAttr ".sp" -type "double3" 1.567521237466037 4.2033836574152126 0.059325416179935475 ;
 createNode mesh -n "r_HandShape" -p "r_Hand";
 	rename -uid "59E5D0CD-C747-55EC-969F-859B3FB5CCF9";
 	setAttr -k off ".v";
@@ -346,10 +347,10 @@ createNode mesh -n "r_HandShape" -p "r_Hand";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  1.6219752 3.7931995 -0.13001721 
-		1.2432899 3.7931995 -0.13001721 1.6219752 3.4425049 -0.13001721 1.2432899 3.4425049 
-		-0.13001721 1.6219752 3.4425049 0.24866803 1.2432899 3.4425049 0.24866803 1.6219752 
-		3.7931995 0.24866803 1.2432899 3.7931995 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  1.8275909 4.3102484 -0.26486313 
+		1.3074515 4.3102484 -0.26486313 1.8275909 3.811727 -0.26486313 1.3074515 3.811727 
+		-0.26486313 1.8275909 3.811727 0.38351399 1.3074515 3.811727 0.38351399 1.8275909 
+		4.3102484 0.38351399 1.3074515 4.3102484 0.38351399;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -374,8 +375,8 @@ createNode mesh -n "r_HandShape" -p "r_Hand";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "l_UpperLeg" -p "Pelvis";
 	rename -uid "068EB9D0-7747-1648-BCAC-87A6AECAE864";
-	setAttr ".rp" -type "double3" -0.32358297095975597 3.5413254458128227 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" -0.32358297095975597 3.5413254458128227 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" -0.55370803007771863 4.1392825587130533 0.059325416179935475 ;
+	setAttr ".sp" -type "double3" -0.55370803007771863 4.1392825587130533 0.059325416179935475 ;
 createNode mesh -n "l_UpperLegShape" -p "l_UpperLeg";
 	rename -uid "FDE97F98-6742-8B8A-538A-92B8C806D469";
 	setAttr -k off ".v";
@@ -390,10 +391,10 @@ createNode mesh -n "l_UpperLegShape" -p "l_UpperLeg";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  -0.13424036 2.914073 -0.13001721 
-		-0.51292557 2.914073 -0.13001721 -0.13424036 3.3519828 -0.13001721 -0.51292557 3.3519828 
-		-0.13001721 -0.13424036 3.3519828 0.24866803 -0.51292557 3.3519828 0.24866803 -0.13424036 
-		2.914073 0.24866803 -0.51292557 2.914073 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  -0.3643654 3.3588655 -0.13001721 
+		-0.74305063 3.3588655 -0.13001721 -0.3643654 3.7967753 -0.13001721 -0.74305063 3.7967753 
+		-0.13001721 -0.3643654 3.7967753 0.24866803 -0.74305063 3.7967753 0.24866803 -0.3643654 
+		3.3588655 0.24866803 -0.74305063 3.3588655 0.24866803;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -418,8 +419,8 @@ createNode mesh -n "l_UpperLegShape" -p "l_UpperLeg";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "l_LowerLeg" -p "l_UpperLeg";
 	rename -uid "CF752221-E94C-43F9-614F-56B6CFE30ED1";
-	setAttr ".rp" -type "double3" -0.32358297095975597 1.9548266548428097 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" -0.32358297095975597 1.9548266548428097 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" -0.55370803007771863 2.6741431303521845 0.059325416179935475 ;
+	setAttr ".sp" -type "double3" -0.55370803007771863 2.6741431303521845 0.059325416179935475 ;
 createNode mesh -n "l_LowerLegShape" -p "l_LowerLeg";
 	rename -uid "F972A46F-7447-21E2-258B-10A2BECFAD71";
 	setAttr -k off ".v";
@@ -434,10 +435,10 @@ createNode mesh -n "l_LowerLegShape" -p "l_LowerLeg";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  -0.13424036 1.3275743 -0.13001721 
-		-0.51292557 1.3275743 -0.13001721 -0.13424036 1.7654841 -0.13001721 -0.51292557 1.7654841 
-		-0.13001721 -0.13424036 1.7654841 0.24866803 -0.51292557 1.7654841 0.24866803 -0.13424036 
-		1.3275743 0.24866803 -0.51292557 1.3275743 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  -0.3643654 1.9186741 -0.13001721 
+		-0.74305063 1.9186741 -0.13001721 -0.3643654 2.3565841 -0.13001721 -0.74305063 2.3565841 
+		-0.13001721 -0.3643654 2.3565841 0.24866803 -0.74305063 2.3565841 0.24866803 -0.3643654 
+		1.9186741 0.24866803 -0.74305063 1.9186741 0.24866803;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -462,14 +463,14 @@ createNode mesh -n "l_LowerLegShape" -p "l_LowerLeg";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "l_Foot" -p "l_LowerLeg";
 	rename -uid "0ADCD420-7845-6156-0449-B2AC6D31B94D";
-	setAttr ".rp" -type "double3" -0.32358297095975541 0.47583933319065586 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" -0.32358297095975541 0.47583933319065586 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" -0.55370800637214357 1.1907998401734192 -0.59827178716659546 ;
+	setAttr ".sp" -type "double3" -0.55370800637214357 1.1907998401734192 -0.59827178716659546 ;
 createNode mesh -n "l_FootShape" -p "l_Foot";
 	rename -uid "36100958-DB47-2DD1-1CA5-9882B1DB73D5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.875 ;
+	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
@@ -478,10 +479,10 @@ createNode mesh -n "l_FootShape" -p "l_Foot";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  -0.13424036 0.46681499 -0.13001721 
-		-0.51292557 0.46681499 -0.13001721 -0.13424036 0.11612034 -0.13001721 -0.51292557 
-		0.11612034 -0.13001721 -0.13424036 0.11612034 0.24866803 -0.51292557 0.11612034 0.24866803 
-		-0.13424036 0.46681499 0.24866803 -0.51292557 0.46681499 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  -0.3643654 1.5650554 -0.13001721 
+		-0.74305063 1.5650554 -0.13001721 -0.3643654 0.89173132 -0.13001721 -0.74305063 0.89173132 
+		-0.13001721 -0.3643654 0.89173132 -0.098271877 -0.74305063 0.89173132 -0.098271877 
+		-0.3643654 1.5650555 -0.098271877 -0.74305063 1.5650555 -0.098271877;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -506,8 +507,8 @@ createNode mesh -n "l_FootShape" -p "l_Foot";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "r_UpperLeg" -p "Pelvis";
 	rename -uid "E3C1D21C-FF41-74D2-5D1C-87873702955B";
-	setAttr ".rp" -type "double3" 0.65738515748177972 3.6481092492132801 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" 0.65738515748177972 3.6481092492132801 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" 0.54524807704157374 4.1494510409031617 0.059325416179935475 ;
+	setAttr ".sp" -type "double3" 0.54524807704157374 4.1494510409031617 0.059325416179935475 ;
 createNode mesh -n "r_UpperLegShape" -p "r_UpperLeg";
 	rename -uid "F13E81E4-974E-BFD0-E446-4EAB4EFC61CD";
 	setAttr -k off ".v";
@@ -522,10 +523,10 @@ createNode mesh -n "r_UpperLegShape" -p "r_UpperLeg";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  0.84672779 3.0208569 -0.13001721 
-		0.46804255 3.0208569 -0.13001721 0.84672779 3.4587667 -0.13001721 0.46804255 3.4587667 
-		-0.13001721 0.84672779 3.4587667 0.24866803 0.46804255 3.4587667 0.24866803 0.84672779 
-		3.0208569 0.24866803 0.46804255 3.0208569 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  0.73459071 3.3868504 -0.13001721 
+		0.35590547 3.3868504 -0.13001721 0.73459071 3.8247602 -0.13001721 0.35590547 3.8247602 
+		-0.13001721 0.73459071 3.8247602 0.24866803 0.35590547 3.8247602 0.24866803 0.73459071 
+		3.3868504 0.24866803 0.35590547 3.3868504 0.24866803;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -550,8 +551,8 @@ createNode mesh -n "r_UpperLegShape" -p "r_UpperLeg";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "r_LowerLeg" -p "r_UpperLeg";
 	rename -uid "C92766AF-CD46-A608-36D1-C9BFDF34A05B";
-	setAttr ".rp" -type "double3" 0.65738515748177972 2.0616104582432673 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" 0.65738515748177972 2.0616104582432673 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" 0.54524809001954133 1.2123692329735949 -0.75301414728164673 ;
+	setAttr ".sp" -type "double3" 0.54524809001954133 1.2123692329735949 -0.75301414728164673 ;
 createNode mesh -n "r_LowerLegShape" -p "r_LowerLeg";
 	rename -uid "902DD9A8-D14A-67BB-783E-B4A862BAD6AD";
 	setAttr -k off ".v";
@@ -566,10 +567,10 @@ createNode mesh -n "r_LowerLegShape" -p "r_LowerLeg";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  0.84672779 1.4343581 -0.13001721 
-		0.46804255 1.4343581 -0.13001721 0.84672779 1.8722678 -0.13001721 0.46804255 1.8722678 
-		-0.13001721 0.84672779 1.8722678 0.24866803 0.46804255 1.8722678 0.24866803 0.84672779 
-		1.4343581 0.24866803 0.46804255 1.4343581 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  0.73459071 1.9305224 -0.13001721 
+		0.35590547 1.9305224 -0.13001721 0.73459071 2.368432 -0.13001721 0.35590547 2.368432 
+		-0.13001721 0.73459071 2.368432 0.24866803 0.35590547 2.368432 0.24866803 0.73459071 
+		1.9305224 0.24866803 0.35590547 1.9305224 0.24866803;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -594,14 +595,14 @@ createNode mesh -n "r_LowerLegShape" -p "r_LowerLeg";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "r_Foot" -p "r_LowerLeg";
 	rename -uid "42F07CB9-8240-296A-86A5-218D989463AC";
-	setAttr ".rp" -type "double3" 0.65738515748178028 0.58262313659111342 0.059325416179935475 ;
-	setAttr ".sp" -type "double3" 0.65738515748178028 0.58262313659111342 0.059325416179935475 ;
+	setAttr ".rp" -type "double3" 0.23459070800812776 1.037747352919121 -0.19151568412780762 ;
+	setAttr ".sp" -type "double3" 0.23459070800812776 1.037747352919121 -0.19151568412780762 ;
 createNode mesh -n "r_FootShape" -p "r_Foot";
 	rename -uid "8D706AEC-0D48-687A-50AF-849B8E5483AF";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.875 ;
+	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
@@ -610,10 +611,10 @@ createNode mesh -n "r_FootShape" -p "r_Foot";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  0.84672779 0.57359886 -0.13001721 
-		0.46804255 0.57359886 -0.13001721 0.84672779 0.22290421 -0.13001721 0.46804255 0.22290421 
-		-0.13001721 0.84672779 0.22290421 0.24866803 0.46804255 0.22290421 0.24866803 0.84672779 
-		0.57359886 0.24866803 0.46804255 0.57359886 0.24866803;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  0.73459071 1.5377474 -0.13001721 
+		0.35590547 1.5377474 -0.13001721 0.73459071 0.88699102 -0.13001721 0.35590547 0.88699102 
+		-0.13001721 0.73459071 0.88699102 -0.25301415 0.35590547 0.88699102 -0.25301415 0.73459071 
+		1.5377474 -0.25301415 0.35590547 1.5377474 -0.25301415;
 	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
 		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -637,22 +638,22 @@ createNode mesh -n "r_FootShape" -p "r_Foot";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "1D67E5B6-8942-B6F3-2984-6E81260FDA49";
+	rename -uid "9463F0AD-B943-6C27-4CD7-8E8C72C73EB8";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "AE913E09-AE40-9544-3D3E-80B8130ED8A8";
+	rename -uid "269E9939-DE45-0CD0-F2B9-B0BF1136DF3B";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "01962C77-BF4B-7ACF-3D04-F5B096EB3F6B";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "3A7E21F1-064D-E577-04AA-5687DA31D4CC";
+	rename -uid "C6CF09DC-4140-37BA-7CBC-DDAC7CEB8EDC";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E71561A7-4E42-FE9E-4E39-4487775119FC";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "FF9C4565-304D-F9DA-F864-D5B545FFD05E";
+	rename -uid "A8D626BF-7E41-1513-3E8C-24B71AA32052";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "CEB58D69-194A-03DC-1BEA-E79CDB94BE95";
+	rename -uid "4F292637-4B48-D7D0-CD39-C1889AC30C4E";
 createNode polyCube -n "polyCube1";
 	rename -uid "91C27B7B-1043-8C23-BC99-2CAECAF71D87";
 	setAttr ".cuv" 4;
@@ -760,6 +761,22 @@ createNode transformGeometry -n "transformGeometry11";
 createNode transformGeometry -n "transformGeometry12";
 	rename -uid "730A8F85-784C-C780-D239-1BB5C83BE081";
 	setAttr ".txf" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 2.7184373727564362 0 1;
+createNode polyTweak -n "polyTweak2";
+	rename -uid "F7A7C7D9-9E48-9E8B-145C-2B85F313D5A7";
+	setAttr ".uopa" yes;
+	setAttr -s 8 ".tk[0:7]" -type "float3"  -0.21012372 0.0079158172 -0.012280732
+		 0.21012372 0.0079158172 -0.012280732 -0.21012372 -0.0079158172 -0.012280732 0.21012372
+		 -0.0079158172 -0.012280732 -0.21012372 -0.0079158172 0.012280732 0.21012372 -0.0079158172
+		 0.012280732 -0.21012372 0.0079158172 0.012280732 0.21012372 0.0079158172 0.012280732;
+createNode transformGeometry -n "transformGeometry13";
+	rename -uid "F237CD4E-6648-207E-9D16-6893048D5537";
+	setAttr ".txf" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0.028280379337517259 0 0 1;
+createNode transformGeometry -n "transformGeometry14";
+	rename -uid "133E7E4E-DA42-DDB8-E228-66B38A4BD7CC";
+	setAttr ".txf" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0.028280379337517259 0 0 1;
+createNode transformGeometry -n "transformGeometry15";
+	rename -uid "7E1EA890-9948-4EB2-E569-01911DA63557";
+	setAttr ".txf" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -0.068239535245572469 0 0 1;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -793,9 +810,9 @@ select -ne :ikSystem;
 	setAttr -s 4 ".sol";
 connectAttr "transformGeometry8.og" "PelvisShape.i";
 connectAttr "transformGeometry9.og" "MiddleBackShape.i";
-connectAttr "transformGeometry10.og" "UpperBackShape.i";
-connectAttr "transformGeometry11.og" "HeadShape.i";
-connectAttr "transformGeometry12.og" "l_UpperArmShape.i";
+connectAttr "transformGeometry13.og" "UpperBackShape.i";
+connectAttr "transformGeometry14.og" "HeadShape.i";
+connectAttr "transformGeometry15.og" "l_UpperArmShape.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -815,6 +832,10 @@ connectAttr "transformGeometry2.og" "transformGeometry9.ig";
 connectAttr "transformGeometry5.og" "transformGeometry10.ig";
 connectAttr "transformGeometry6.og" "transformGeometry11.ig";
 connectAttr "transformGeometry7.og" "transformGeometry12.ig";
+connectAttr "transformGeometry10.og" "polyTweak2.ip";
+connectAttr "polyTweak2.out" "transformGeometry13.ig";
+connectAttr "transformGeometry11.og" "transformGeometry14.ig";
+connectAttr "transformGeometry12.og" "transformGeometry15.ig";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "UpperBackShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "MiddleBackShape.iog" ":initialShadingGroup.dsm" -na;

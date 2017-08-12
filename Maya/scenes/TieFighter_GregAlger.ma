@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: TieFighter_GregAlger.ma
-//Last modified: Sat, Aug 12, 2017 08:20:20 AM
+//Last modified: Sat, Aug 12, 2017 08:54:04 AM
 //Codeset: UTF-8
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,8 +13,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "E0076717-FD49-632E-398C-0F8E2707B6F5";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.4102470616258656 -9.2002875151284975 -19.203910885014277 ;
-	setAttr ".r" -type "double3" 154.46164727033462 -364.20000000001437 1.9931994584566174e-16 ;
+	setAttr ".t" -type "double3" 1.263490153929836 -1.2427161025805296 -21.266958638570699 ;
+	setAttr ".r" -type "double3" 176.66164727033276 -363.39999999999503 -3.7337846207681901e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "B66FC967-4C4B-1890-31C5-0A813AF0CE52";
 	setAttr -k off ".v" no;

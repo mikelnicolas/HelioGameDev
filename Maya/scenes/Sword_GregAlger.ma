@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Sword_GregAlger.ma
-//Last modified: Fri, Aug 11, 2017 06:41:52 PM
+//Last modified: Sat, Aug 12, 2017 07:08:48 AM
 //Codeset: UTF-8
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,15 +13,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "55EC9CDB-C84F-B8F8-07A3-2E8A43B51FF1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 30.414952794389855 41.476203564336387 -52.734453620509484 ;
-	setAttr ".r" -type "double3" -36.338352729404775 510.59999999998166 0 ;
+	setAttr ".t" -type "double3" -3.1068781439483937 23.064643432113073 -42.769113120750163 ;
+	setAttr ".r" -type "double3" -26.738352729403847 544.19999999998004 0 ;
 	setAttr ".rp" -type "double3" 0 -2.2204460492503131e-16 0 ;
 	setAttr ".rpt" -type "double3" 1.4189295009083507e-18 4.6436523058848648e-18 4.5151068820929685e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "2E9DEA87-364B-C084-6655-DE9079C001D3";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 75.169335377161616;
+	setAttr ".coi" 50.114656454018991;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -87,21 +87,26 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.375 0.75 ;
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt";
-	setAttr ".pt[8]" -type "float3" 0.34502855 0 0 ;
-	setAttr ".pt[9]" -type "float3" -0.37873915 0 0 ;
-	setAttr ".pt[10]" -type "float3" -0.34502855 0 0 ;
-	setAttr ".pt[11]" -type "float3" 0.37873915 0 0 ;
-	setAttr ".pt[44]" -type "float3" -0.013993306 -0.033389501 -0.041326184 ;
-	setAttr ".pt[45]" -type "float3" -0.051187634 -0.032723717 0.048139311 ;
-	setAttr ".pt[46]" -type "float3" -0.055766065 -0.028802842 1.0914984 ;
-	setAttr ".pt[47]" -type "float3" -0.052123584 -0.033507742 0.93890512 ;
+	setAttr -s 64 ".pt[0:63]" -type "float3"  0 0.55650342 0 0 0.55650342 
+		0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 
+		0 0.34502855 0.55650342 0 -0.37873915 0.55650342 0 -0.34502855 0.55650342 0 0.37873915 
+		0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 
+		0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 
+		0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 
+		0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 
+		0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 
+		0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 -0.039405443 0.52311385 -0.041326184 
+		-0.051187634 0.52377963 0.048139311 -0.055766065 0.52770048 1.0914984 -0.052123584 
+		0.52299559 0.93890512 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 
+		0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 
+		0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 0 0 0.55650342 
+		0;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "4F8A3B76-B947-84A5-3374-2EB182480BF2";

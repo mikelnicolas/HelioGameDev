@@ -32,6 +32,3 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.DS_Store
-
-#Substance Painter
-*.painter_lock

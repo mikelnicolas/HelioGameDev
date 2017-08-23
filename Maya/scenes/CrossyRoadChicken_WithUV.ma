@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: CrossyRoadChicken_WithUV.ma
-//Last modified: Sat, Aug 19, 2017 02:56:35 PM
+//Last modified: Tue, Aug 22, 2017 09:19:37 AM
 //Codeset: UTF-8
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "71BDF061-E94A-7E13-39A6-0187E0C9F01E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 8.6243533679926419 11.848955985767784 -11.084493510361877 ;
+	setAttr ".t" -type "double3" 10.211835946029641 13.514372954217142 -12.910683315146082 ;
 	setAttr ".r" -type "double3" 325.46164726618429 -581.00000000005161 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D6B97528-D04E-DF58-D9A9-63B5E4F6F46B";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 20.924846344842447;
+	setAttr ".coi" 23.862308483741927;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";

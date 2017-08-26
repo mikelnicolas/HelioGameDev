@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: 3Character.ma
-//Last modified: Sat, Aug 26, 2017 10:14:12 AM
+//Last modified: Sat, Aug 26, 2017 10:26:16 AM
 //Codeset: UTF-8
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -18,13 +18,13 @@ createNode transform -n "Body_GRP" -p "Root_GRP";
 	rename -uid "AC17F737-604B-C796-8A36-43AA01A91193";
 	setAttr ".rp" -type "double3" 0 5.4662352809200376 -9.9632289192829919 ;
 	setAttr ".sp" -type "double3" 0 5.4662352809200376 -9.9632289192829919 ;
-createNode transform -n "Pelvis1" -p "Body_GRP";
+createNode transform -n "Pelvis" -p "Body_GRP";
 	rename -uid "B7DD41B6-814E-F8A1-294F-11A48EE07C47";
 	addAttr -ci true -sn "GoZBrushID" -ln "GoZBrushID" -nn "GoZBrushID" -dt "string";
 	setAttr ".rp" -type "double3" 0 5.8550862144939257 -0.50132132238558214 ;
 	setAttr ".sp" -type "double3" 0 5.8550862144939257 -0.50132132238558214 ;
 	setAttr ".GoZBrushID" -type "string" "polySurface45";
-createNode mesh -n "Pelvis1Shape" -p "Pelvis1";
+createNode mesh -n "PelvisShape" -p "Pelvis";
 	rename -uid "8598C56E-0B40-401F-7E57-5F842593F0F0";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -415,7 +415,7 @@ createNode mesh -n "Pelvis1Shape" -p "Pelvis1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "R_UpperLeg" -p "Pelvis1";
+createNode transform -n "R_UpperLeg" -p "Pelvis";
 	rename -uid "4265BF90-5242-2901-92FB-BA935EAEBEEF";
 	addAttr -ci true -sn "GoZBrushID" -ln "GoZBrushID" -nn "GoZBrushID" -dt "string";
 	setAttr ".rp" -type "double3" -0.95396582774011884 3.9156203021638949 -0.18887948770333318 ;
@@ -576,13 +576,13 @@ createNode mesh -n "R_UpperLegShape" -p "R_UpperLeg";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface41" -p "Body_GRP";
+createNode transform -n "MiddleBody" -p "Body_GRP";
 	rename -uid "B82A26F8-7049-04E3-4051-8FA82B7E5F78";
 	addAttr -ci true -sn "GoZBrushID" -ln "GoZBrushID" -nn "GoZBrushID" -dt "string";
 	setAttr ".rp" -type "double3" 0 5.8316617452319655 0.17636857593090127 ;
 	setAttr ".sp" -type "double3" 0 5.8316617452319655 0.17636857593090305 ;
 	setAttr ".GoZBrushID" -type "string" "polySurface36";
-createNode mesh -n "polySurfaceShape41" -p "polySurface41";
+createNode mesh -n "MiddleBodyShape" -p "MiddleBody";
 	rename -uid "657BBE48-9440-142B-79CE-A0AB78AE7D92";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -952,13 +952,13 @@ createNode mesh -n "polySurfaceShape41" -p "polySurface41";
 createNode transform -s -n "persp";
 	rename -uid "D9CDAF52-F244-1A58-65F3-EEBA2C7CFBCE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 6.5501990209072201 15.468056689874455 22.525543766754005 ;
-	setAttr ".r" -type "double3" -20.738352729602337 15.400000000000089 -1.2371265336508085e-15 ;
+	setAttr ".t" -type "double3" -10.540775521085736 11.138183014559882 18.502925880675814 ;
+	setAttr ".r" -type "double3" -9.9383527295992753 -28.999999999997492 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A26EBF9F-DD43-3ED6-DAA7-C09470F2A1E1";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 26.665487252493449;
+	setAttr ".coi" 21.020766927572488;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1935,11 +1935,11 @@ createNode mesh -n "R_PalmShape" -p "R_Palm";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface58" -p "R_Palm";
+createNode transform -n "R_Ring1" -p "R_Palm";
 	rename -uid "7CE613BB-F743-C8CB-4320-F689919B063D";
 	setAttr ".rp" -type "double3" -3.0390401118636361 3.2064764201845275 -0.86037986876152672 ;
 	setAttr ".sp" -type "double3" -3.0390401118636361 3.2064764201845275 -0.86037986876152672 ;
-createNode mesh -n "polySurfaceShape68" -p "polySurface58";
+createNode mesh -n "R_RingShape1" -p "R_Ring1";
 	rename -uid "71324277-0D4F-6CC0-D05B-37AB6568C330";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:39]";
@@ -2092,11 +2092,11 @@ createNode mesh -n "polySurfaceShape68" -p "polySurface58";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface56" -p "polySurface58";
+createNode transform -n "R_Ring2" -p "R_Ring1";
 	rename -uid "E0B2424E-0140-7186-C1F8-9B8DC37B770C";
 	setAttr ".rp" -type "double3" -3.0610271436352452 2.71326744816262 -0.87118219975555 ;
 	setAttr ".sp" -type "double3" -3.0610271436352452 2.71326744816262 -0.87118219975555 ;
-createNode mesh -n "polySurfaceShape66" -p "|R_Forearm|R_Palm|polySurface58|polySurface56";
+createNode mesh -n "R_RingShape2" -p "R_Ring2";
 	rename -uid "F48A715C-2E43-E661-F089-93AE7B85F14D";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:39]";
@@ -2250,11 +2250,11 @@ createNode mesh -n "polySurfaceShape66" -p "|R_Forearm|R_Palm|polySurface58|poly
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface59" -p "R_Palm";
+createNode transform -n "R_Pinky1" -p "R_Palm";
 	rename -uid "50913591-B44B-18EB-BAB5-A88CA026D9E5";
 	setAttr ".rp" -type "double3" -2.8363221943397363 3.2724036063431416 -1.2765528901940826 ;
 	setAttr ".sp" -type "double3" -2.8363221943397363 3.2724036063431416 -1.2765528901940826 ;
-createNode mesh -n "polySurfaceShape59" -p "polySurface59";
+createNode mesh -n "R_PinkyShape1" -p "R_Pinky1";
 	rename -uid "15A1C465-A040-5B95-2F04-D296546E9032";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:39]";
@@ -2407,11 +2407,11 @@ createNode mesh -n "polySurfaceShape59" -p "polySurface59";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface56" -p "polySurface59";
+createNode transform -n "R_Pinky2" -p "R_Pinky1";
 	rename -uid "889CE33A-F647-79A4-811A-288D71AB0554";
 	setAttr ".rp" -type "double3" -2.8636960100819175 2.8303454504204142 -1.2862349089523963 ;
 	setAttr ".sp" -type "double3" -2.8636960100819175 2.8303454504204142 -1.2862349089523963 ;
-createNode mesh -n "polySurfaceShape56" -p "|R_Forearm|R_Palm|polySurface59|polySurface56";
+createNode mesh -n "R_PinkyShape2" -p "R_Pinky2";
 	rename -uid "3E68A867-2543-61C7-F8ED-5AABCC324AE3";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:39]";
@@ -2565,11 +2565,11 @@ createNode mesh -n "polySurfaceShape56" -p "|R_Forearm|R_Palm|polySurface59|poly
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface60" -p "R_Palm";
+createNode transform -n "R_Pointer" -p "R_Palm";
 	rename -uid "C36666A8-2D47-A50D-C5EE-4C9B5C815849";
 	setAttr ".rp" -type "double3" -2.9819486446026722 3.2202297155032786 -0.44042269498171649 ;
 	setAttr ".sp" -type "double3" -2.9819486446026722 3.2202297155032786 -0.44042269498171649 ;
-createNode mesh -n "polySurfaceShape60" -p "polySurface60";
+createNode mesh -n "R_PointerShape" -p "R_Pointer";
 	rename -uid "265710F9-DD41-3CBC-9DA0-B5B218A6F5D0";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:39]";
@@ -2722,11 +2722,11 @@ createNode mesh -n "polySurfaceShape60" -p "polySurface60";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface56" -p "polySurface60";
+createNode transform -n "R_Pointer2" -p "R_Pointer";
 	rename -uid "0157679D-6741-E50A-9073-F485CA0DE02F";
 	setAttr ".rp" -type "double3" -3.0113719073146545 2.7976323149459006 -0.44967848158940882 ;
 	setAttr ".sp" -type "double3" -3.0113719073146545 2.7976323149459006 -0.44967848158940882 ;
-createNode mesh -n "polySurfaceShape56" -p "|R_Forearm|R_Palm|polySurface60|polySurface56";
+createNode mesh -n "R_PointerShape2" -p "R_Pointer2";
 	rename -uid "7D40F793-514C-D3DE-0947-F385F46ADE61";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:39]";
@@ -2880,11 +2880,11 @@ createNode mesh -n "polySurfaceShape56" -p "|R_Forearm|R_Palm|polySurface60|poly
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface61" -p "R_Palm";
+createNode transform -n "R_Thumb" -p "R_Palm";
 	rename -uid "DD4A5E6E-D246-CF82-0416-03A546931C9C";
 	setAttr ".rp" -type "double3" -3.035142226604723 3.9055511682640325 -0.27693974363513263 ;
 	setAttr ".sp" -type "double3" -3.035142226604723 3.9055511682640325 -0.27693974363513263 ;
-createNode mesh -n "polySurfaceShape61" -p "polySurface61";
+createNode mesh -n "R_ThumbShape" -p "R_Thumb";
 	rename -uid "EEE3CF06-DB44-F4FE-BECB-5A9AB601262E";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:39]";
@@ -3035,11 +3035,11 @@ createNode mesh -n "polySurfaceShape61" -p "polySurface61";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface56" -p "polySurface61";
+createNode transform -n "Thumb2" -p "R_Thumb";
 	rename -uid "711EF559-A841-97F2-61FD-0C9BBE248B9C";
 	setAttr ".rp" -type "double3" -3.0692182372597361 3.8956102001741812 0.15583074993431367 ;
 	setAttr ".sp" -type "double3" -3.0692182372597361 3.8956102001741812 0.15583074993431367 ;
-createNode mesh -n "polySurfaceShape56" -p "|R_Forearm|R_Palm|polySurface61|polySurface56";
+createNode mesh -n "ThumbShape2" -p "Thumb2";
 	rename -uid "E9E7A51A-BC4D-5216-45A6-E78ED3EF544C";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:39]";
@@ -3759,11 +3759,11 @@ createNode mesh -n "R_Shoulder1Shape" -p "R_Shoulder1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface63" -p "R_Shoulder1";
+createNode transform -n "R_ShoulderPlates" -p "R_Shoulder1";
 	rename -uid "41270E33-C145-2C5E-92E5-47853825EA97";
 	setAttr ".rp" -type "double3" -3.2039968807891546 8.8148718413953393 -0.7244249244098202 ;
 	setAttr ".sp" -type "double3" -3.2039968807891546 8.8148718413953393 -0.7244249244098202 ;
-createNode mesh -n "polySurface63Shape" -p "polySurface63";
+createNode mesh -n "R_ShoulderPlatesShape" -p "R_ShoulderPlates";
 	rename -uid "436F0BC5-774E-90D1-B943-F090B638771B";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:29]";
@@ -3897,11 +3897,11 @@ createNode mesh -n "polySurface63Shape" -p "polySurface63";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube40";
+createNode transform -n "Head";
 	rename -uid "A6CBECE9-9546-1183-A3EE-8DA076C558D7";
 	setAttr ".rp" -type "double3" 0 9.8155193441167654 0.070117404063871902 ;
 	setAttr ".sp" -type "double3" 0 9.8155193441167654 0.070117404063871902 ;
-createNode mesh -n "pCubeShape40" -p "pCube40";
+createNode mesh -n "HeadShape" -p "Head";
 	rename -uid "AA827626-E24E-A2C8-A4D4-BEA4B1D592DC";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -4328,13 +4328,13 @@ createNode mesh -n "pCubeShape40" -p "pCube40";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "HeadBody";
+createNode transform -n "UpperBody";
 	rename -uid "7466557D-D84F-359B-3C38-06B69A0C7B2E";
 	addAttr -ci true -sn "GoZBrushID" -ln "GoZBrushID" -nn "GoZBrushID" -dt "string";
 	setAttr ".rp" -type "double3" 0 6.8403927224666994 -0.064047175946120305 ;
 	setAttr ".sp" -type "double3" 0 6.8403927224666994 -0.064047175946120305 ;
 	setAttr ".GoZBrushID" -type "string" "polySurface48";
-createNode mesh -n "HeadBodyShape" -p "HeadBody";
+createNode mesh -n "UpperBodyShape" -p "UpperBody";
 	rename -uid "E24D7FDF-4640-2EB3-B35C-3FBD91E8B97E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5375,11 +5375,11 @@ createNode mesh -n "R_LowerLegShape" -p "R_LowerLeg";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface49" -p "R_LowerLeg";
+createNode transform -n "R_KneeGuard" -p "R_LowerLeg";
 	rename -uid "5159103A-FE46-5C25-29AA-66ACB908F524";
 	setAttr ".rp" -type "double3" 0.22499283313279728 0 0.34178397370069158 ;
 	setAttr ".sp" -type "double3" 0.22499283313279728 0 0.34178397370069158 ;
-createNode mesh -n "polySurfaceShape59" -p "polySurface49";
+createNode mesh -n "R_KneeGuardShape" -p "R_KneeGuard";
 	rename -uid "0036886D-C644-CF11-A56C-FAB0D1DE796F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -5460,44 +5460,15 @@ createNode shadingEngine -n "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh2_l
 createNode lambert -n "PATCH_005";
 	rename -uid "93F0B89E-A34E-5EEB-6D3A-F0BD7F27484C";
 	setAttr ".c" -type "float3" 1 0 1 ;
-createNode groupId -n "groupId340";
-	rename -uid "14E9831C-9045-FDA1-41C4-AE94309D146D";
-	setAttr ".ihi" 0;
 createNode shadingEngine -n "GenericMesh_V10_1:PS_1:Quadra_defaultMat";
 	rename -uid "FF09347D-8E40-CAF4-0181-EC9112C5F99D";
 	setAttr ".ihi" 0;
-	setAttr -s 9 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 9 ".gn";
 createNode materialInfo -n "GenericMesh_V10_1:PS_1:Quadra_materialInfo1";
 	rename -uid "46E1A3A0-2D42-1DBA-63D3-8EA549289B81";
 createNode lambert -n "PATCH_004";
 	rename -uid "5A5CCB53-6345-AFD9-DB97-47AC780BEE0B";
 	setAttr ".c" -type "float3" 0 0 0 ;
-createNode groupId -n "groupId334";
-	rename -uid "02633422-0942-C162-0D8E-518F6694A9FD";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId328";
-	rename -uid "81BB733F-974F-A2DF-7303-7BBB51FE0566";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId335";
-	rename -uid "BDE89960-5E43-6069-1ADE-6F93D7AC6805";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId321";
-	rename -uid "0383297E-D14D-13A7-0715-C5B3F44A1E4B";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId336";
-	rename -uid "04388EA8-874D-C408-AA2E-BE94B147F4E3";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId323";
-	rename -uid "9D713D20-814D-E70E-5D55-9889A33A0382";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId324";
-	rename -uid "2E24F4CF-5446-4746-8CF3-A2844FA26CD1";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId325";
-	rename -uid "FE3582B9-AC4E-4335-5491-838CB8570F57";
-	setAttr ".ihi" 0;
 createNode groupId -n "groupId341";
 	rename -uid "835CE6E5-6244-ED42-B161-D68B968C6C96";
 	setAttr ".ihi" 0;
@@ -5622,6 +5593,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
+	setAttr -s 10 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -5673,51 +5645,20 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwcc";
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
-connectAttr "layer1.di" "Pelvis1.do";
+connectAttr "layer1.di" "Pelvis.do";
 connectAttr "layer1.di" "R_UpperLeg.do";
-connectAttr "layer1.di" "polySurface41.do";
+connectAttr "layer1.di" "MiddleBody.do";
 connectAttr "layer1.di" "R_Foot.do";
-connectAttr "groupId340.id" "R_PalmShape.iog.og[0].gid";
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "R_PalmShape.iog.og[0].gco"
-		;
-connectAttr "groupId334.id" "polySurfaceShape68.iog.og[0].gid";
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "polySurfaceShape68.iog.og[0].gco"
-		;
-connectAttr "groupId328.id" "polySurfaceShape66.iog.og[0].gid";
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "polySurfaceShape66.iog.og[0].gco"
-		;
-connectAttr "groupId335.id" "|R_Forearm|R_Palm|polySurface59|polySurfaceShape59.iog.og[0].gid"
-		;
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "|R_Forearm|R_Palm|polySurface59|polySurfaceShape59.iog.og[0].gco"
-		;
-connectAttr "groupId321.id" "|R_Forearm|R_Palm|polySurface59|polySurface56|polySurfaceShape56.iog.og[0].gid"
-		;
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "|R_Forearm|R_Palm|polySurface59|polySurface56|polySurfaceShape56.iog.og[0].gco"
-		;
-connectAttr "groupId336.id" "polySurfaceShape60.iog.og[0].gid";
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "polySurfaceShape60.iog.og[0].gco"
-		;
-connectAttr "groupId323.id" "|R_Forearm|R_Palm|polySurface60|polySurface56|polySurfaceShape56.iog.og[0].gid"
-		;
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "|R_Forearm|R_Palm|polySurface60|polySurface56|polySurfaceShape56.iog.og[0].gco"
-		;
-connectAttr "groupId324.id" "polySurfaceShape61.iog.og[0].gid";
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "polySurfaceShape61.iog.og[0].gco"
-		;
-connectAttr "groupId325.id" "|R_Forearm|R_Palm|polySurface61|polySurface56|polySurfaceShape56.iog.og[0].gid"
-		;
-connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.mwc" "|R_Forearm|R_Palm|polySurface61|polySurface56|polySurfaceShape56.iog.og[0].gco"
-		;
 connectAttr "layer1.di" "R_Shoulder.do";
 connectAttr "layer1.di" "R_Wrist.do";
 connectAttr "layer1.di" "R_Shoulder1.do";
-connectAttr "groupId341.id" "polySurface63Shape.iog.og[0].gid";
-connectAttr "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.mwc" "polySurface63Shape.iog.og[0].gco"
+connectAttr "groupId341.id" "R_ShoulderPlatesShape.iog.og[0].gid";
+connectAttr "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.mwc" "R_ShoulderPlatesShape.iog.og[0].gco"
 		;
-connectAttr "layer1.di" "pCube40.do";
-connectAttr "layer1.di" "HeadBody.do";
+connectAttr "layer1.di" "Head.do";
+connectAttr "layer1.di" "UpperBody.do";
 connectAttr "layer1.di" "R_LowerLeg.do";
-connectAttr "layer1.di" "polySurface49.do";
+connectAttr "layer1.di" "R_KneeGuard.do";
 connectAttr "layerManager.dli[3]" "layer1.id";
 connectAttr "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.msg" "GenericMesh_V10_1:AR__materialInfo9.sg"
 		;
@@ -5726,19 +5667,19 @@ connectAttr "PATCH_002.oc" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lam
 		;
 connectAttr "R_Shoulder1Shape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.dsm"
 		 -na;
-connectAttr "polySurfaceShape41.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.dsm"
+connectAttr "MiddleBodyShape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.dsm"
 		 -na;
-connectAttr "HeadBodyShape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.dsm"
+connectAttr "UpperBodyShape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.dsm"
 		 -na;
-connectAttr "Pelvis1Shape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.dsm"
+connectAttr "PelvisShape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.dsm"
 		 -na;
 connectAttr "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.msg" "GenericMesh_V10_1:AR__materialInfo11.sg"
 		;
 connectAttr "PATCH_003.msg" "GenericMesh_V10_1:AR__materialInfo11.m";
 connectAttr "PATCH_003.oc" "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.ss";
-connectAttr "polySurface63Shape.iog.og[0]" "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.dsm"
+connectAttr "R_ShoulderPlatesShape.iog.og[0]" "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.dsm"
 		 -na;
-connectAttr "pCubeShape40.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.dsm"
+connectAttr "HeadShape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.dsm"
 		 -na;
 connectAttr "groupId341.msg" "GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.gn"
 		 -na;
@@ -5752,41 +5693,13 @@ connectAttr "R_ShoulderShape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricM
 connectAttr "R_WristShape.iog" "GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh2_lambert5SG.dsm"
 		 -na;
 connectAttr "PATCH_004.oc" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.ss";
-connectAttr "|R_Forearm|R_Palm|polySurface59|polySurface56|polySurfaceShape56.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "|R_Forearm|R_Palm|polySurface60|polySurface56|polySurfaceShape56.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "polySurfaceShape61.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "|R_Forearm|R_Palm|polySurface61|polySurface56|polySurfaceShape56.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "polySurfaceShape66.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "polySurfaceShape68.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "|R_Forearm|R_Palm|polySurface59|polySurfaceShape59.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "polySurfaceShape60.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "R_PalmShape.iog.og[0]" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.dsm"
-		 -na;
-connectAttr "groupId321.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
-connectAttr "groupId323.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
-connectAttr "groupId324.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
-connectAttr "groupId325.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
-connectAttr "groupId328.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
-connectAttr "groupId334.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
-connectAttr "groupId335.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
-connectAttr "groupId336.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
-connectAttr "groupId340.msg" "GenericMesh_V10_1:PS_1:Quadra_defaultMat.gn" -na;
 connectAttr "GenericMesh_V10_1:PS_1:Quadra_defaultMat.msg" "GenericMesh_V10_1:PS_1:Quadra_materialInfo1.sg"
 		;
 connectAttr "PATCH_004.msg" "GenericMesh_V10_1:PS_1:Quadra_materialInfo1.m";
 connectAttr "lambert6SG.msg" "materialInfo5.sg";
 connectAttr "EX_004.msg" "materialInfo5.m";
 connectAttr "EX_004.oc" "lambert6SG.ss";
-connectAttr "|R_LowerLeg|polySurface49|polySurfaceShape59.iog" "lambert6SG.dsm" 
-		-na;
+connectAttr "R_KneeGuardShape.iog" "lambert6SG.dsm" -na;
 connectAttr "R_LowerLegShape.iog" "lambert6SG.dsm" -na;
 connectAttr "R_UpperLegShape.iog" "lambert6SG.dsm" -na;
 connectAttr "R_FootShape.iog" "lambert6SG.dsm" -na;
@@ -5822,4 +5735,13 @@ connectAttr "PATCH_004.msg" ":defaultShaderList1.s" -na;
 connectAttr "EX_004.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "R_ForearmShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "ThumbShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "R_ThumbShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "R_PointerShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "R_PointerShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "R_PinkyShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "R_PinkyShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "R_PalmShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "R_RingShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "R_RingShape2.iog" ":initialShadingGroup.dsm" -na;
 // End of 3Character.ma

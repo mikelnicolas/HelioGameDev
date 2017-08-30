@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 31986b527e66a5146931bee12b3107cd
 timeCreated: 1503771473
 licenseType: Free
+=======
+guid: 2f3471d098fa94964adf4ef1037b1de1
+timeCreated: 1503772047
+licenseType: Pro
+>>>>>>> master
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -347,12 +353,20 @@ ModelImporter:
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
+<<<<<<< HEAD
       additiveReferencePoseFrame: 1
+=======
+      additiveReferencePoseFrame: 0
+>>>>>>> master
     - serializedVersion: 16
       name: March
       takeName: Take 001
       firstFrame: 1
+<<<<<<< HEAD
       lastFrame: 25
+=======
+      lastFrame: 24
+>>>>>>> master
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

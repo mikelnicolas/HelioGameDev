@@ -13,7 +13,7 @@ public class Animal : MonoBehaviour
     public string size = "Large";
 
     //Function/Methods
-    void Start()
+    public virtual void Start()
     {
         Die();
         Spawn();

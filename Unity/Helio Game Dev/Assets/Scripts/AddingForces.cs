@@ -12,7 +12,7 @@ public class AddingForces : MonoBehaviour {
 	}
 
 	void AddShipForce (KeyCode _i, Vector3 _v) {
-		if (Input.GetKeyDown(_i))
+		if (Input.GetKey(_i))
 		{
 			shipRigidbody.AddForce(_v*force);
 		}

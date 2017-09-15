@@ -12,4 +12,5 @@ public class GrappleHook : MonoBehaviour {
 	//Parameters
 	//Length
 	//Damage
+	public float grappleDamage = 0.05f;
 }

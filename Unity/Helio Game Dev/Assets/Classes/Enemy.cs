@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour {
 
 	//Parameters
 	//Damage
+	public float enemyDamage = 0.1f;
 	//Health
+	public float enemyHealth = 0.5f;
 
 }

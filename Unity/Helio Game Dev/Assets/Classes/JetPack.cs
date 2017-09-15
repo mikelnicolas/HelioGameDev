@@ -9,5 +9,7 @@ public class JetPack : MonoBehaviour {
 	
 	//Parameters
 	//Durability
+	public float health = 0.7f;
 	//Fuel
+	public int fuel = 250;
 }

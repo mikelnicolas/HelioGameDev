@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : Enemy {
 
+	public float health = 1.0f;
 	//Functions
 	//Crawl
 	//Climb

@@ -13,10 +13,17 @@ public class Dog : Mammal {
 
     private void Bark()
     {
+<<<<<<< HEAD
        print("This " + this.name + " is a " + breed + " it's loud.");
+=======
+        print("This " + this.name + " is a " + breed + " it's loud.");
+>>>>>>> master
     }
 
     public string breed = "Bull Dog";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }

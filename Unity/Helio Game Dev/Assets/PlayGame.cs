@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class PlayerGame : MonoBehaviour {
+public class PlayGame : MonoBehaviour {
+
+	
 
 	public void Run () {
 		print("load");

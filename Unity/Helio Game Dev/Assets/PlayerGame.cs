@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 public class PlayerGame : MonoBehaviour {
 
+	public StaticVars.Levels currentLevel = StaticVars.Levels.Level0;
+
 	public void Run () {
-		print("load");
-		SceneManager.LoadScene("Level0", LoadSceneMode.Additive);
+		print(currentLevel);
+		SceneManager.LoadScene(currentLevel.ToString(), LoadSceneMode.Additive);
 		gameObject.SetActive(false);
 
 	}

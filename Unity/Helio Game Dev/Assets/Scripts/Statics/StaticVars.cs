@@ -6,6 +6,7 @@ public class StaticVars {
 	public enum Levels
 	{
 		Start,
+		Level0,
 		Level_01,
 		Level_02,
 		Level_03,

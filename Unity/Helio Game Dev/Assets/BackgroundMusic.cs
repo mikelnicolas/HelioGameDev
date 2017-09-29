@@ -19,7 +19,12 @@ public class BackgroundMusic : MonoBehaviour {
 	}
 
 	void Run (bool _canPlay) {
-		print(_canPlay);
+		if (_canPlay)
+		{
+			music.Play();
+		} else {
+			music.Pause();
+		}
 	}
 
 

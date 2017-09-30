@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class BackgroundMusic : MonoBehaviour {
 
-<<<<<<< HEAD
-	void Run
-=======
 	public AudioSource music;
 
 	Toggle toggle;
@@ -29,7 +26,6 @@ public class BackgroundMusic : MonoBehaviour {
 			music.Pause();
 		}
 	}
->>>>>>> master
 
 
 

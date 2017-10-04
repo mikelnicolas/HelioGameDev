@@ -5,9 +5,11 @@ using UnityEngine.AI;
 
 public class SharkAI : AI {
 
-	void OnTriggerEnter(Collider _target)
+	public FishList fishList;
+
+	void Start()
 	{
-		food = _target.transform;
+		food = fishList.ChangePoints(fishList.myFishList);
 	}
 
 }

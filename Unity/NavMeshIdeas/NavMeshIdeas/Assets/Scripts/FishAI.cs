@@ -18,8 +18,7 @@ public class FishAI : AI {
 
 	void OnTriggerEnter(Collider _c)
 	{
-		if(_c.tag == "Shark")
-			gameObject.SetActive(false);
+		gameObject.SetActive(false);
 	}
 	
 }

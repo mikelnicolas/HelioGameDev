@@ -8,7 +8,7 @@ public class FishPoints : MonoBehaviour {
 
 	public static Action<FishPoints> SendPointList;
 
-	public List<Transform> locations = new List<Transform>();
+		public List<Transform> locations = new List<Transform>();
 
 	void Awake()
 	{

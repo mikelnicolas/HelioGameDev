@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class RandomDestination : MonoBehaviour {
 
-	public static Action<RandomDestination> SendPointList;
+	public static Action<RandomDestination> SendThis;
 
-		public List<Transform> locations = new List<Transform>();
+		public List<Transform> points = new List<Transform>();
 
 	void Awake()
 	{
@@ -17,18 +17,18 @@ public class RandomDestination : MonoBehaviour {
 
 	void Start()
 	{
-		SendPointList(this);
+		SendThis(this);
 	}
 
     private void SendPointHanlder(Transform _point)
     {
-        locations.Add(_point);
+        points.Add(_point);
     }
 
-    public Transform ChangeDestination () {
+    public Transform ChangeDestination (List<Transform> _list) {
 		Transform _tempTransform;
-		int i = UnityEngine.Random.Range(0, locations.Count);
-		_tempTransform = locations[i];
+		int i = UnityEngine.Random.Range(0, _list.Count);
+		_tempTransform = _list[i];
 		return _tempTransform;
 	}
 }

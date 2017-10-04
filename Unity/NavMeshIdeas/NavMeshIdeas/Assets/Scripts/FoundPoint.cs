@@ -10,7 +10,7 @@ public class FoundPoint : MonoBehaviour {
 	public FishAI fishAgent;
 	void Awake()
 	{
-		RandomDestination.SendPointList += SendPointListHandler;
+		RandomDestination.SendThis += SendPointListHandler;
 	}
 
     private void SendPointListHandler(RandomDestination _pointList)
@@ -20,6 +20,6 @@ public class FoundPoint : MonoBehaviour {
 
     void OnTriggerEnter	()
 	{
-		fishAgent.food = fishpointList.ChangeDestination();
+		fishAgent.food = fishpointList.ChangeDestination(fishpointList.points);
 	}
 }

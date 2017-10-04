@@ -7,13 +7,13 @@ public class FishAI : AI {
 
     void Awake()
 	{
-		RandomDestination.SendPointList += SendPointListHandler;
+		RandomDestination.SendThis += SendPointListHandler;
 	}
 
     private void SendPointListHandler(RandomDestination _pointList)
     {
         fishpointList = _pointList;
-		food = fishpointList.ChangeDestination ();
+		food = fishpointList.ChangeDestination (fishpointList.points);
     }
 
 	void OnTriggerEnter(Collider _c)

@@ -2,8 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 public class FishAI : AI {
+
+	public static UnityAction<Transform> SendFish;
+
     public RandomDestination fishpointList;
+
+	void Start()
+	{
+		SendFish(transform);
+	}
 
     void Awake()
 	{

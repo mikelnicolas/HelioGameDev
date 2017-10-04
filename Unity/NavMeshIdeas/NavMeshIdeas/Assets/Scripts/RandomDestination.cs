@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class FishPoints : MonoBehaviour {
+public class RandomDestination : MonoBehaviour {
 
-	public static Action<FishPoints> SendPointList;
+	public static Action<RandomDestination> SendPointList;
 
 		public List<Transform> locations = new List<Transform>();
 
@@ -25,7 +25,7 @@ public class FishPoints : MonoBehaviour {
         locations.Add(_point);
     }
 
-    public Transform ChangePoint () {
+    public Transform ChangeDestination () {
 		Transform _tempTransform;
 		int i = UnityEngine.Random.Range(0, locations.Count);
 		_tempTransform = locations[i];

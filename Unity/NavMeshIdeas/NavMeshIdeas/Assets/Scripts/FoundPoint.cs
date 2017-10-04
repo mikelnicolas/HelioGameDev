@@ -6,20 +6,20 @@ using UnityEngine.AI;
 
 public class FoundPoint : MonoBehaviour {
 
-	public FishPoints fishpointList;
+	public RandomDestination fishpointList;
 	public FishAI fishAgent;
 	void Awake()
 	{
-		FishPoints.SendPointList += SendPointListHandler;
+		RandomDestination.SendPointList += SendPointListHandler;
 	}
 
-    private void SendPointListHandler(FishPoints _pointList)
+    private void SendPointListHandler(RandomDestination _pointList)
     {
         fishpointList = _pointList;
     }
 
     void OnTriggerEnter	()
 	{
-		fishAgent.food = fishpointList.ChangePoint();
+		fishAgent.food = fishpointList.ChangeDestination();
 	}
 }

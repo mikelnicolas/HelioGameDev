@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class FishAI : AI {
-    public FishPoints fishpointList;
+    public RandomDestination fishpointList;
 
     void Awake()
 	{
-		FishPoints.SendPointList += SendPointListHandler;
+		RandomDestination.SendPointList += SendPointListHandler;
 	}
 
-    private void SendPointListHandler(FishPoints _pointList)
+    private void SendPointListHandler(RandomDestination _pointList)
     {
         fishpointList = _pointList;
-		food = fishpointList.ChangePoint();
+		food = fishpointList.ChangeDestination ();
     }
 
 	void OnTriggerEnter(Collider _c)

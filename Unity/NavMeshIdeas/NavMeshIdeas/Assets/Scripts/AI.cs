@@ -8,10 +8,17 @@ public class AI : MonoBehaviour {
 	public NavMeshAgent agent;
 	protected Transform destination;
 	protected List<Transform> destinations;
+<<<<<<< HEAD
 	
 	protected bool canDestroy = false;
 	protected bool canAddBack = true;
 	
+=======
+
+	protected bool canDestroy = false;
+	protected bool canAddBack = true;
+
+>>>>>>> master
 	void Update () {
 		agent.destination = destination.position;
 	}
@@ -26,6 +33,7 @@ public class AI : MonoBehaviour {
         {
             destinations.Remove(_newDestination.transform);
             
+<<<<<<< HEAD
 			if(destinations.Count > 0){
 				ChangeDestination();
 			}
@@ -38,5 +46,18 @@ public class AI : MonoBehaviour {
 				destinations.Add(_newDestination.transform);
 			}
 		}
+=======
+			if(destinations.Count > 0) {
+				ChangeDestination();
+			}
+				
+			if(canDestroy) {
+				_newDestination.gameObject.SetActive(false);
+			}
+			if(canAddBack){
+				destinations.Add(_newDestination.transform);
+			}
+        }
+>>>>>>> master
     }
 }

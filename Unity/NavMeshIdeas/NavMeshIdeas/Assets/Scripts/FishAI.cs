@@ -5,9 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 public class FishAI : AI
 {
-
     public static UnityAction<Transform> SendFish;
-
 
     void Start()
     {

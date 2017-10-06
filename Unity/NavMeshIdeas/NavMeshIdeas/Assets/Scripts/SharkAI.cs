@@ -8,13 +8,16 @@ public class SharkAI : AI {
 
     void Awake()
     {
+        canDestroy = true;
+        canAddBack = false;
         FishAI.SendFish += SendFishHandler;
-        Invoke("GetFood", 0.1f);
     }
-
+    void Start()
+    {
+        ChangeDestination();
+    }
     private void SendFishHandler(Transform _fish)
     {
         destinations.Add(_fish);
     }
-
 }

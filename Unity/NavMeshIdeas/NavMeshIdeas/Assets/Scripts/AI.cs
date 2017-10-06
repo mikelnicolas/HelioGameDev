@@ -6,20 +6,18 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour {
 
 	public NavMeshAgent agent;
-	public Transform destination;
+	protected Transform destination;
+	protected List<Transform> destinations;
 
-	public List<Transform> destinations;
+	protected bool canDestroy = false;
+	protected bool canAddBack = true;
 
-	// Update is called once per frame
 	void Update () {
 		agent.destination = destination.position;
 	}
 
-	public Transform ChangeDestination () {
-		Transform _tempTransform;
-		int i = UnityEngine.Random.Range(0, destinations.Count);
-		_tempTransform = destinations[i];
-		return _tempTransform;
+	public void ChangeDestination () {
+		destination = destinations[UnityEngine.Random.Range(0, destinations.Count)];
 	}
 
 	void OnTriggerEnter(Collider _newDestination)
@@ -27,8 +25,17 @@ public class AI : MonoBehaviour {
         if (destinations.Contains(_newDestination.transform))
         {
             destinations.Remove(_newDestination.transform);
-            destination = ChangeDestination();
-			destinations.Add(_newDestination.transform);
+            
+			if(destinations.Count > 0) {
+				ChangeDestination();
+			}
+				
+			if(canDestroy) {
+				_newDestination.gameObject.SetActive(false);
+			}
+			if(canAddBack){
+				destinations.Add(_newDestination.transform);
+			}
         }
     }
 }

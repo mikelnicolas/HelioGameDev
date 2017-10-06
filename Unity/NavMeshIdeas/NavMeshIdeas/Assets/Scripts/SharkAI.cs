@@ -12,7 +12,13 @@ public class SharkAI : AI {
     void Awake()
     {
         RandomDestination.SendThis += SendThisHandler;
+        FishAI.SendFish += SendFishHandler;
         Invoke("GetFood", 0.1f);
+    }
+
+    private void SendFishHandler(Transform _fish)
+    {
+        fish.Add(_fish);
     }
 
     void GetFood () {

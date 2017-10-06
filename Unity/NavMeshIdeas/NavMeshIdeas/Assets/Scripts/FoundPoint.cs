@@ -20,6 +20,7 @@ public class FoundPoint : MonoBehaviour {
 
     void OnTriggerEnter	()
 	{
-		fishAgent.food = fishpointList.ChangeDestination(fishpointList.points);
+		//Need to refactor
+		//fishAgent.food = fishpointList.ChangeDestination(fishpointList.points);
 	}
 }

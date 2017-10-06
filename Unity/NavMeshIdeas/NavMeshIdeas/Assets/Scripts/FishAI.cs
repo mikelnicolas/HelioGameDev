@@ -3,31 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
-public class FishAI : AI {
+public class FishAI : AI
+{
 
-	public static UnityAction<Transform> SendFish;
+    public static UnityAction<Transform> SendFish;
 
-    public RandomDestination fishpointList;
 
-	void Start()
-	{
-		SendFish(transform);
-	}
-
-    void Awake()
-	{
-		RandomDestination.SendThis += SendPointListHandler;
-	}
-
-    private void SendPointListHandler(RandomDestination _pointList)
+    void Start()
     {
-        fishpointList = _pointList;
-		food = fishpointList.ChangeDestination (fishpointList.points);
+        SendFish(transform);
+		destination = ChangeDestination();
     }
 
-	void OnTriggerEnter(Collider _c)
-	{
-		gameObject.SetActive(false);
-	}
-	
+    void Awake()
+    {
+        FishPoint.SendPoint += SendPointHanlder;
+    }
+    private void SendPointHanlder(Transform _point)
+    {
+        destinations.Add(_point);
+    }
+
+    // void OnTriggerEnter(Collider _c)
+    // {
+    //     gameObject.SetActive(false);
+    // }
+
 }

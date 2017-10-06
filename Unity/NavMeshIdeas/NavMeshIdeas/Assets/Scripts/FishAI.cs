@@ -7,27 +7,25 @@ public class FishAI : AI {
 
 	public static UnityAction<Transform> SendFish;
 
-    public RandomDestination fishpointList;
 
 	void Start()
 	{
 		SendFish(transform);
+		destination = ChangeDestination();
 	}
 
-    void Awake()
+	void Awake()
 	{
-		RandomDestination.SendThis += SendPointListHandler;
+		FishPoint.SendPoint += SendPointHanlder;
 	}
-
-    private void SendPointListHandler(RandomDestination _pointList)
+    private void SendPointHanlder(Transform _point)
     {
-        fishpointList = _pointList;
-		food = fishpointList.ChangeDestination (fishpointList.points);
+        destinations.Add(_point);
     }
 
-	void OnTriggerEnter(Collider _c)
-	{
-		gameObject.SetActive(false);
-	}
+	//void OnTriggerEnter(Collider _c)
+	//{
+		//gameObject.SetActive(false);
+	//}
 	
 }

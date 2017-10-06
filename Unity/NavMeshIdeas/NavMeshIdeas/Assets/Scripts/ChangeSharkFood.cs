@@ -10,10 +10,10 @@ public class ChangeSharkFood : MonoBehaviour
     void OnTriggerEnter(Collider _fish)
     {
 
-        if (sharkAI.fish.Contains(_fish.transform))
+        if (sharkAI.destination.Contains(_fish.transform))
         {
             sharkAI.fish.Remove(_fish.transform);
-            sharkAI.food = sharkAI.foodSource.ChangeDestination(sharkAI.fish);
+            sharkAI.food = sharkAI.ChangeDestination(sharkAI.fish);
         }
     }
 }

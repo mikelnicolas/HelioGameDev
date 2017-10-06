@@ -6,8 +6,11 @@ using UnityEngine.AI;
 
 public class SharkAI : AI {
 
+<<<<<<< HEAD
 	public RandomDestination foodSource;
 
+=======
+>>>>>>> master
     void Awake()
     {
         FishAI.SendFish += SendFishHandler;
@@ -17,4 +20,8 @@ public class SharkAI : AI {
     {
         destinations.Add(_fish);
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 }

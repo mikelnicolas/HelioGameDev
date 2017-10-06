@@ -7,6 +7,7 @@ public class ChangeSharkFood : MonoBehaviour
 
     public SharkAI sharkAI;
 
+<<<<<<< HEAD
     void OnTriggerEnter(Collider _fish)
     {
 
@@ -16,4 +17,7 @@ public class ChangeSharkFood : MonoBehaviour
             sharkAI.food = sharkAI.ChangeDestination(sharkAI.fish);
         }
     }
+=======
+    
+>>>>>>> master
 }

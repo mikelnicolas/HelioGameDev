@@ -10,8 +10,19 @@ public class RandomDestination : MonoBehaviour {
 
 		public List<Transform> points = new List<Transform>();
 
+<<<<<<< HEAD
+=======
+	
+>>>>>>> master
 	void Start()
 	{
 		SendThis(this);
 	}
+<<<<<<< HEAD
+=======
+
+    
+
+    
+>>>>>>> master
 }

@@ -14,6 +14,7 @@ public class SharkAI : AI {
     }
     void Start()
     {
+        totalScore.text = PlayerPrefs.GetInt("TotalScore").ToString();
         ChangeDestination();
     }
     private void SendFishHandler(Transform _fish)

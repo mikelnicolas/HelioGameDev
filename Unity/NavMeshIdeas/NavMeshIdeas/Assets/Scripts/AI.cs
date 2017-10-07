@@ -7,7 +7,7 @@ public class AI : MonoBehaviour {
 
 	public NavMeshAgent agent;
 	protected Transform destination;
-	protected List<Transform> destinations;
+	protected List<Transform> destinations = new List<Transform>();
 
 	protected bool canDestroy = false;
 	protected bool canAddBack = true;

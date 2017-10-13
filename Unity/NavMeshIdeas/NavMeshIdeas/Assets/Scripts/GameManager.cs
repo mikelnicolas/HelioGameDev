@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	public Text input;
 	public Text output;
 	public Transform player;
-	public GameData gameData = new GameData();
+	public static GameData gameData = new GameData();
 	
 	void Start () {
 		gameData = GameData.CreateFromJSON(PlayerPrefs.GetString(infoName));

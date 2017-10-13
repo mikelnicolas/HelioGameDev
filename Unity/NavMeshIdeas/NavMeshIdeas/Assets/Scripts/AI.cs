@@ -15,6 +15,10 @@ public class AI : MonoBehaviour {
 
 	public Text totalScore;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 	void Update () {
 		agent.destination = destination.position;
 	}
@@ -28,13 +32,26 @@ public class AI : MonoBehaviour {
         if (destinations.Contains(_newDestination.transform))
         {
             destinations.Remove(_newDestination.transform);
+<<<<<<< HEAD
 			
+=======
+            
+>>>>>>> master
 			if(canDestroy) {
 				_newDestination.gameObject.SetActive(false);
 			}
 			
 			if(canAddBack){
 				destinations.Add(_newDestination.transform);
+
+			}
+
+			if(destinations.Count > 0) {
+				ChangeDestination();
+			} else {
+				//May want to move to an end game class
+				StaticVars.UpdateTotalScore();
+				totalScore.text = PlayerPrefs.GetInt("TotalScore").ToString();
 			}
 			
 			if(destinations.Count > 0) {

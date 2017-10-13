@@ -32,7 +32,7 @@ public class GameData {
     public float health;
     public int gold;
     public Vector3 checkPoint;
-    public List<Vector3> purchases;
+    public List<GameObject> purchases;
     
     public static GameData CreateFromJSON(string _fromJsonString)
     {

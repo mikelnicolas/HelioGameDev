@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LoadLevels : MonoBehaviour {
 
-	public void Load () {
-		SceneManager.LoadScene("box", LoadSceneMode.Additive);
+	public void Load (string level) {
+		SceneManager.LoadScene(level);
+		print("hi");
 	}
 }

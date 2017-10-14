@@ -13,8 +13,6 @@ public class AI : MonoBehaviour {
 	protected bool canDestroy = false;
 	protected bool canAddBack = true;
 
-	public Text totalScore;
-
 
 	void Update () {
 		agent.destination = destination.position;
@@ -35,16 +33,11 @@ public class AI : MonoBehaviour {
 			}
 			if(canAddBack){
 				destinations.Add(_newDestination.transform);
-
 			}
 
 			if(destinations.Count > 0) {
 				ChangeDestination();
-			} else {
-				//May want to move to an end game class
-				StaticVars.UpdateTotalScore();
-				totalScore.text = PlayerPrefs.GetInt("TotalScore").ToString();
-			}
+			} 
         }
     }
 }

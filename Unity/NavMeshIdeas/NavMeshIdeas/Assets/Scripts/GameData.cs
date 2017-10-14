@@ -4,20 +4,27 @@ using System.Collections.Generic;
 [System.Serializable]
 public class GameData {
 
+    public string playerPrefsIdentifier = "GameData";
     public string playerName;
+
+    public int totalScore;
     public int lives;
     public float health;
     public int gold;
     public Vector3 checkPoint;
     public List<GameObject> purchases;
     
-    public static GameData CreateFromJSON(string _fromJsonString)
+    public void GetPlayerPrefs()
     {
-        return JsonUtility.FromJson<GameData>(_fromJsonString);
+        if (string.IsNullOrEmpty(PlayerPrefs.GetString(playerPrefsIdentifier)))
+        {
+             SetPlayerPrefs();
+        }
+        StaticVars.gameData = JsonUtility.FromJson<GameData>(PlayerPrefs.GetString(playerPrefsIdentifier));
     }
 
-    public void SaveToPlayerPrefs(string _toJsonString)
+    public void SetPlayerPrefs()
     {
-        PlayerPrefs.SetString(_toJsonString, JsonUtility.ToJson(this));
+        PlayerPrefs.SetString(playerPrefsIdentifier, JsonUtility.ToJson(StaticVars.gameData));
     }
 }

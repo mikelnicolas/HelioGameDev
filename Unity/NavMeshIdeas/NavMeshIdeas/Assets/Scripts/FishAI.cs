@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class FishAI : AI
 {
     public static UnityAction<Transform> SendFish;
+    public static UnityAction<int> SendPoints;
     public int pointValue = 10;
-    public Text score;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class FishAI : AI
 		ChangeDestination();
     }
 
-    void Awake()
+    void OnEnable ()
     {
         FishPoint.SendPoint += SendPointHanlder;
     }
@@ -24,10 +24,9 @@ public class FishAI : AI
     {
         destinations.Add(_point);
     }
-
     void OnDisable()
     {
-        StaticVars.score += pointValue;
-        score.text = StaticVars.score.ToString();
+        if(SendPoints != null)
+            SendPoints(pointValue);
     }
 }

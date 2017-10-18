@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEditor;
 
 public class PurchaseObject : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class PurchaseObject : MonoBehaviour {
 	public PurchaseManager purchaseManager;
 
 	public void MakePurchase () {
+		//SendPurchase(price, purchacedObject);
+		//GetPrefabObject(Object targetObject);
 		SendPurchase(price, purchacedObject);
 	}
 }

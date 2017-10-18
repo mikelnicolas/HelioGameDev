@@ -7,7 +7,7 @@ public class GameData
     GameData () {
 
     }
-    
+
     public const string playerPrefsIdentifier = "GameData";
     public string playerName;
     public int totalScore;
@@ -16,7 +16,6 @@ public class GameData
     public int gold;
     public Vector3 checkPoint;
     public List<GameObject> purchases;
-
     private static GameData _instance;
     public static GameData Instance
     {

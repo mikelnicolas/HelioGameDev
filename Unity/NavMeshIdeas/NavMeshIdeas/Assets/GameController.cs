@@ -3,11 +3,15 @@
 public class GameController : MonoBehaviour {
 
 	void Awake () {
-		StaticVars.gameData.GetPlayerPrefs();
+
+		print(GameData.Instance.purchases.Count);
+		//StaticVars.gameData.GetPlayerPrefs();
 	}
 
 	void OnDestroy()
 	{
-		StaticVars.gameData.SetPlayerPrefs();
+		GameData.SetPlayerPrefs();
+		//StaticVars.gameData.purchases = null;
+		//StaticVars.gameData.SetPlayerPrefs();
 	}
  }

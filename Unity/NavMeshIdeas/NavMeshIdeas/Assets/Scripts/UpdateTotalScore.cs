@@ -8,14 +8,14 @@ public class UpdateTotalScore : UpdateScore {
 	{
 		base.Start();
 		FishAI.SendPoints += ScoreHandler;
-		StaticVars.gameData.GetPlayerPrefs();
-		score = StaticVars.gameData.totalScore;
+		//GameData.Instance.GetPlayerPrefs();
+		score = GameData.Instance.totalScore;
 		
 		text.text = score.ToString();
 	}
 
 	public override void ScoreHandler(int _points) {
 		base.ScoreHandler(_points);
-		StaticVars.gameData.totalScore += _points;
+		GameData.Instance.totalScore += _points;
 	}
 }

@@ -10,7 +10,7 @@ public class FishAI : AI
     public static UnityAction<int> SendPoints;
     public int pointValue = 10;
 
-    void Start()
+    void Start ()
     {
         SendFish(transform);
 		ChangeDestination();

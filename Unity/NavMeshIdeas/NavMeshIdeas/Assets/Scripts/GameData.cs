@@ -2,29 +2,47 @@ using UnityEngine;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class GameData {
+public class GameData
+{
+    GameData () {
 
-    public string playerPrefsIdentifier = "GameData";
+    }
+    
+    public const string playerPrefsIdentifier = "GameData";
     public string playerName;
-
     public int totalScore;
     public int lives;
     public float health;
     public int gold;
     public Vector3 checkPoint;
     public List<GameObject> purchases;
-    
-    public void GetPlayerPrefs()
+
+    private static GameData _instance;
+    public static GameData Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                GameData.GetPlayerPrefs();
+            }
+            return _instance;
+        }
+    }
+
+    public static void GetPlayerPrefs()
     {
         if (string.IsNullOrEmpty(PlayerPrefs.GetString(playerPrefsIdentifier)))
         {
-             SetPlayerPrefs();
+            _instance = new GameData();
+        } else
+        {
+            _instance = JsonUtility.FromJson<GameData>(PlayerPrefs.GetString(playerPrefsIdentifier));
         }
-        StaticVars.gameData = JsonUtility.FromJson<GameData>(PlayerPrefs.GetString(playerPrefsIdentifier));
     }
 
-    public void SetPlayerPrefs()
+    public static void SetPlayerPrefs()
     {
-        PlayerPrefs.SetString(playerPrefsIdentifier, JsonUtility.ToJson(StaticVars.gameData));
+        PlayerPrefs.SetString(playerPrefsIdentifier, JsonUtility.ToJson(_instance));
     }
 }

@@ -8,7 +8,7 @@ public class BuyGold : MonoBehaviour {
 	public static UnityAction AddGold;
 
 	public void BuyGoldFunction (int _gold) {
-		StaticVars.gameData.gold += _gold;
+		GameData.Instance.gold += _gold;
 		AddGold();
 	}
 }

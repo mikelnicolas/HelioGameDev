@@ -5,9 +5,10 @@ using UnityEngine;
 public class AddPurchases : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		foreach (var item in StaticVars.gameData.purchases)
+	void OnEnable () {
+		foreach (var item in GameData.Instance.purchases)
 		{
+			//print(item);
 			Instantiate(item);
 		}	
 	}

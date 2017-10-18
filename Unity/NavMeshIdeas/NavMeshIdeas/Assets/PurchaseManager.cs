@@ -14,22 +14,22 @@ public class PurchaseManager : MonoBehaviour {
 	}
 	void Start () {
 		gold = GetComponent<Text>();
-		gold.text = "$" + StaticVars.gameData.gold.ToString();
+		gold.text = "$" + GameData.Instance.gold.ToString();
 		BuyGold.AddGold += AddGoldHandler;
 	}
 
     private void AddGoldHandler()
     {
-        gold.text = "$" + StaticVars.gameData.gold.ToString();
+        gold.text = "$" + GameData.Instance.gold.ToString();
     }
 
     public void MakePurchase (int _cost, GameObject _object) {
-		if (StaticVars.gameData.gold > 0)
+		if (GameData.Instance.gold > 0)
 		{
-			StaticVars.gameData.gold -= _cost;
-			StaticVars.gameData.purchases.Add(_object);
-			gold.text = "$" + StaticVars.gameData.gold.ToString();
-			print(StaticVars.gameData.purchases.Count);
+			GameData.Instance.gold -= _cost;
+			GameData.Instance.purchases.Add(_object);
+			gold.text = "$" + GameData.Instance.gold.ToString();
+			print(GameData.Instance.purchases.Count);
 		}
 	}
 }

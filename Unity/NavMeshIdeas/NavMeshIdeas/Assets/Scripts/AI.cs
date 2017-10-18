@@ -13,10 +13,13 @@ public class AI : MonoBehaviour {
 	protected bool canDestroy = false;
 	protected bool canAddBack = true;
 
+<<<<<<< HEAD
 	public Text totalScore;
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> master
 
 >>>>>>> master
 	void Update () {
@@ -43,11 +46,11 @@ public class AI : MonoBehaviour {
 			
 			if(canAddBack){
 				destinations.Add(_newDestination.transform);
-
 			}
 
 			if(destinations.Count > 0) {
 				ChangeDestination();
+<<<<<<< HEAD
 			} else {
 				//May want to move to an end game class
 				StaticVars.UpdateTotalScore();
@@ -61,6 +64,9 @@ public class AI : MonoBehaviour {
 				StaticVars.UpdateTotalScore();
 				totalScore.text = PlayerPrefs.GetInt("TotalScore").ToString();
 			}
+=======
+			} 
+>>>>>>> master
         }
     }
 }

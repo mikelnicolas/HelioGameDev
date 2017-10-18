@@ -11,6 +11,7 @@ public class StaticVars {
 		PlayerPrefs.SetInt("TotalScore", tempScore+=score);
 =======
 public class StaticVars  {
+<<<<<<< HEAD
 
 	public static int score = 0;
 
@@ -20,4 +21,7 @@ public class StaticVars  {
 >>>>>>> master
 	}
 
+=======
+	//public static GameData gameData = new GameData();
+>>>>>>> master
 }

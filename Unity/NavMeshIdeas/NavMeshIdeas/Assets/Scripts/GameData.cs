@@ -8,6 +8,7 @@ public class GameData
 
     }
 
+    public bool hasKey = false;
     public const string playerPrefsIdentifier = "GameData";
     public string playerName;
     public int totalScore;

@@ -13,8 +13,8 @@ public class PurchaseObject : MonoBehaviour {
 	public PurchaseManager purchaseManager;
 
 	public void MakePurchase () {
-		//SendPurchase(price, purchacedObject);
-		//GetPrefabObject(Object targetObject);
+
+		//GameData.Instance.purchases = null;
 		SendPurchase(price, purchacedObject);
 	}
 }

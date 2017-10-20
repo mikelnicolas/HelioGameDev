@@ -15,7 +15,7 @@ public class GameData
     public float health;
     public int gold;
     public Vector3 checkPoint;
-    public List<GameObject> purchases;
+    public List<string> purchases;
     private static GameData _instance;
     public static GameData Instance
     {

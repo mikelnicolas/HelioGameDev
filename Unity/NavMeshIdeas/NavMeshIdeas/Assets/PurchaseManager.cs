@@ -27,7 +27,15 @@ public class PurchaseManager : MonoBehaviour {
 		if (GameData.Instance.gold > 0)
 		{
 			GameData.Instance.gold -= _cost;
-			GameData.Instance.purchases.Add(_object);
+			GameData.Instance.purchases.Add(_object.name);
+			print(_object.name);
+			
+			foreach (var item in GameData.Instance.purchases)
+			{
+				print(item);
+			}
+
+
 			gold.text = "$" + GameData.Instance.gold.ToString();
 			print(GameData.Instance.purchases.Count);
 		}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD:Unity/NavMeshIdeas/NavMeshIdeas/Assets/Scripts/StaticVars.cs
 <<<<<<< HEAD
 public class StaticVars {
 
@@ -24,4 +25,13 @@ public class StaticVars  {
 =======
 	//public static GameData gameData = new GameData();
 >>>>>>> master
+=======
+
+public class HasKey : MonoBehaviour {
+
+	// Use this for initialization
+	void Start () {
+		print(GameData.Instance.hasKey);
+	}
+>>>>>>> master:Unity/NavMeshIdeas/NavMeshIdeas/Assets/HasKey.cs
 }

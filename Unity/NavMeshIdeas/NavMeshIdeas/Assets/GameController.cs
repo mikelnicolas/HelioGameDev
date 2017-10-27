@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
 
 	void OnDestroy()
 	{
+		//GameData.Instance.purchases = null;
 		GameData.SetPlayerPrefs();
 		//StaticVars.gameData.purchases = null;
 		//StaticVars.gameData.SetPlayerPrefs();

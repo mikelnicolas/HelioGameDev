@@ -8,8 +8,7 @@ public class AddPurchases : MonoBehaviour {
 	void OnEnable () {
 		foreach (var item in GameData.Instance.purchases)
 		{
-			//print(item);
-			Instantiate(item);
+			Instantiate(Resources.Load("Prefabs/" + item));
 		}	
 	}
 }
